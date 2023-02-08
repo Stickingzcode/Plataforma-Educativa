@@ -1,17 +1,15 @@
-## Documentation
+# School Management API (scaffold)
 
-> Installation
+Environment variables:
+- MONGO_URI
+- JWT_SECRET
+- PORT (optional)
 
-```bash
+Install:
+npm install
 
-# Environment variables
-LONG_TOKEN_SECRET
-SHORT_TOKEN_SECRET
+Run (dev):
+npm run dev
 
-# Install dependencies
-$ npm install
-
-# Starting service
-$ node app.js / nodemon
-
-```
+Run tests:
+npm test
