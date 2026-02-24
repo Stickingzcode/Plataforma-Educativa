@@ -16,6 +16,13 @@ app.use(morgan('dev'));
 const limiter = rateLimit({ windowMs: 60*1000, max: 120 });
 app.use(limiter);
 
+//swagger
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./openapi.yaml');
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // routes
 app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/schools', require('./routes/school.routes'));
